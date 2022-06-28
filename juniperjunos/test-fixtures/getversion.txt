@@ -1,0 +1,7 @@
+admin@vr-vqfx> show version
+Hostname: vr-vqfx
+Model: vsrx
+Junos: 17.3R2.10
+JUNOS Software Release [17.3R2.10]
+
+admin@vr-vqfx>

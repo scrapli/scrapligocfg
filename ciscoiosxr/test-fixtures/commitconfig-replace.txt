@@ -1,0 +1,98 @@
+RP/0/RP0/CPU0:vr-xrv9k#
+RP/0/RP0/CPU0:vr-xrv9k#configure terminal
+Mon Jun 27 19:42:56.763 UTC
+RP/0/RP0/CPU0:vr-xrv9k(config)#
+RP/0/RP0/CPU0:vr-xrv9k(config)#!
+RP/0/RP0/CPU0:vr-xrv9k(config)#!
+RP/0/RP0/CPU0:vr-xrv9k(config)#!
+RP/0/RP0/CPU0:vr-xrv9k(config)#hostname vr-xrv9k
+RP/0/RP0/CPU0:vr-xrv9k(config)#username boxen
+RP/0/RP0/CPU0:vr-xrv9k(config-un)# group root-lr
+RP/0/RP0/CPU0:vr-xrv9k(config-un)# group cisco-support
+RP/0/RP0/CPU0:vr-xrv9k(config-un)# secret 5 $1$Eqd9$r77Xc5HHjEiT.ushQEHMu1
+RP/0/RP0/CPU0:vr-xrv9k(config-un)#!
+RP/0/RP0/CPU0:vr-xrv9k(config-un)#username clab
+RP/0/RP0/CPU0:vr-xrv9k(config-un)# group root-lr
+RP/0/RP0/CPU0:vr-xrv9k(config-un)# group cisco-support
+RP/0/RP0/CPU0:vr-xrv9k(config-un)# password 7 1511070D060A7A767B
+RP/0/RP0/CPU0:vr-xrv9k(config-un)#!
+RP/0/RP0/CPU0:vr-xrv9k(config-un)#call-home
+RP/0/RP0/CPU0:vr-xrv9k(config-call-home)# service active
+RP/0/RP0/CPU0:vr-xrv9k(config-call-home)# contact smart-licensing
+RP/0/RP0/CPU0:vr-xrv9k(config-call-home)# profile CiscoTAC-1
+RP/0/RP0/CPU0:vr-xrv9k(config-call-home-profile)#  active
+RP/0/RP0/CPU0:vr-xrv9k(config-call-home-profile)#  destination transport-method http
+RP/0/RP0/CPU0:vr-xrv9k(config-call-home-profile)# !
+RP/0/RP0/CPU0:vr-xrv9k(config-call-home-profile)#!
+RP/0/RP0/CPU0:vr-xrv9k(config-call-home-profile)#interface MgmtEth0/RP0/CPU0/0
+RP/0/RP0/CPU0:vr-xrv9k(config-if)# ipv4 address 10.0.0.15 255.255.255.0
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#!
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#interface GigabitEthernet0/0/0/0
+RP/0/RP0/CPU0:vr-xrv9k(config-if)# shutdown
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#!
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#interface GigabitEthernet0/0/0/1
+RP/0/RP0/CPU0:vr-xrv9k(config-if)# shutdown
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#!
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#interface GigabitEthernet0/0/0/2
+RP/0/RP0/CPU0:vr-xrv9k(config-if)# shutdown
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#!
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#interface GigabitEthernet0/0/0/3
+RP/0/RP0/CPU0:vr-xrv9k(config-if)# shutdown
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#!
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#interface GigabitEthernet0/0/0/4
+RP/0/RP0/CPU0:vr-xrv9k(config-if)# shutdown
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#!
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#interface GigabitEthernet0/0/0/5
+RP/0/RP0/CPU0:vr-xrv9k(config-if)# shutdown
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#!
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#interface GigabitEthernet0/0/0/6
+RP/0/RP0/CPU0:vr-xrv9k(config-if)# shutdown
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#!
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#interface GigabitEthernet0/0/0/7
+RP/0/RP0/CPU0:vr-xrv9k(config-if)# shutdown
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#!
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#interface GigabitEthernet0/0/0/8
+RP/0/RP0/CPU0:vr-xrv9k(config-if)# shutdown
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#!
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#interface GigabitEthernet0/0/0/9
+RP/0/RP0/CPU0:vr-xrv9k(config-if)# shutdown
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#!
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#interface GigabitEthernet0/0/0/10
+RP/0/RP0/CPU0:vr-xrv9k(config-if)# shutdown
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#!
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#interface GigabitEthernet0/0/0/11
+RP/0/RP0/CPU0:vr-xrv9k(config-if)# shutdown
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#!
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#interface GigabitEthernet0/0/0/12
+RP/0/RP0/CPU0:vr-xrv9k(config-if)# shutdown
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#!
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#interface GigabitEthernet0/0/0/13
+RP/0/RP0/CPU0:vr-xrv9k(config-if)# shutdown
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#!
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#interface GigabitEthernet0/0/0/14
+RP/0/RP0/CPU0:vr-xrv9k(config-if)# shutdown
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#!
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#interface GigabitEthernet0/0/0/15
+RP/0/RP0/CPU0:vr-xrv9k(config-if)# shutdown
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#!
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#grpc
+RP/0/RP0/CPU0:vr-xrv9k(config-grpc)# port 57400
+RP/0/RP0/CPU0:vr-xrv9k(config-grpc)# no-tls
+RP/0/RP0/CPU0:vr-xrv9k(config-grpc)#!
+RP/0/RP0/CPU0:vr-xrv9k(config-grpc)#netconf-yang agent
+RP/0/RP0/CPU0:vr-xrv9k(config-ncy-agent)# ssh
+RP/0/RP0/CPU0:vr-xrv9k(config-ncy-agent)#!
+RP/0/RP0/CPU0:vr-xrv9k(config-ncy-agent)#ssh server rate-limit 600
+RP/0/RP0/CPU0:vr-xrv9k(config)#ssh server v2
+RP/0/RP0/CPU0:vr-xrv9k(config)#ssh server netconf vrf default
+RP/0/RP0/CPU0:vr-xrv9k(config)#!
+RP/0/RP0/CPU0:vr-xrv9k(config)#
+RP/0/RP0/CPU0:vr-xrv9k(config)#
+RP/0/RP0/CPU0:vr-xrv9k(config)#
+RP/0/RP0/CPU0:vr-xrv9k(config)#commit replace
+Mon Jun 27 19:42:58.933 UTC
+
+This commit will replace or remove the entire running configuration. This
+operation can be service affecting.
+Do you wish to proceed? [no]: yes
+RP/0/RP0/CPU0:vr-xrv9k(config)#

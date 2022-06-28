@@ -1,0 +1,24 @@
+
+
+configure terminal
+
+
+
+
+interface GigabitEthernet0/0/0/15
+
+
+ description tacocat
+
+
+
+
+
+
+
+
+
+
+
+commit
+

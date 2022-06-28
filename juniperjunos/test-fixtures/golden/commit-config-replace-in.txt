@@ -1,0 +1,395 @@
+
+
+start shell user root
+
+
+
+
+echo >> /config/scrapli_cfg_candidate 'system {'
+
+
+echo >> /config/scrapli_cfg_candidate '    host-name vr-vqfx;'
+
+
+echo >> /config/scrapli_cfg_candidate '    root-authentication {'
+
+
+echo >> /config/scrapli_cfg_candidate '        encrypted-password "$1$a$/nr2uXmtaTqW504hxM3Yw0"; ## SECRET-DATA'
+
+
+echo >> /config/scrapli_cfg_candidate '    }'
+
+
+echo >> /config/scrapli_cfg_candidate '    login {'
+
+
+echo >> /config/scrapli_cfg_candidate '        user admin {'
+
+
+echo >> /config/scrapli_cfg_candidate '            uid 2001;'
+
+
+echo >> /config/scrapli_cfg_candidate '            class super-user;'
+
+
+echo >> /config/scrapli_cfg_candidate '            authentication {'
+
+
+echo >> /config/scrapli_cfg_candidate '                encrypted-password "$6$7Z54CIYT$MHaROLZKJluM8DbQmXAe/69e4nHZtNEqY49g00c5UJHX/qZJbJJp/RfC5H1xfmcmZawlpL1/EE3uzds8KwEub0"; ## SECRET-DATA'
+
+
+echo >> /config/scrapli_cfg_candidate '            }'
+
+
+echo >> /config/scrapli_cfg_candidate '        }'
+
+
+echo >> /config/scrapli_cfg_candidate '        user boxen {'
+
+
+echo >> /config/scrapli_cfg_candidate '            uid 2000;'
+
+
+echo >> /config/scrapli_cfg_candidate '            class super-user;'
+
+
+echo >> /config/scrapli_cfg_candidate '            authentication {'
+
+
+echo >> /config/scrapli_cfg_candidate '                encrypted-password "$1$a$/nr2uXmtaTqW504hxM3Yw0"; ## SECRET-DATA'
+
+
+echo >> /config/scrapli_cfg_candidate '            }'
+
+
+echo >> /config/scrapli_cfg_candidate '        }'
+
+
+echo >> /config/scrapli_cfg_candidate '    }'
+
+
+echo >> /config/scrapli_cfg_candidate '    services {'
+
+
+echo >> /config/scrapli_cfg_candidate '        ssh;'
+
+
+echo >> /config/scrapli_cfg_candidate '        netconf {'
+
+
+echo >> /config/scrapli_cfg_candidate '            ssh;'
+
+
+echo >> /config/scrapli_cfg_candidate '            rfc-compliant;'
+
+
+echo >> /config/scrapli_cfg_candidate '        }'
+
+
+echo >> /config/scrapli_cfg_candidate '        web-management {'
+
+
+echo >> /config/scrapli_cfg_candidate '            http {'
+
+
+echo >> /config/scrapli_cfg_candidate '                interface fxp0.0;'
+
+
+echo >> /config/scrapli_cfg_candidate '            }'
+
+
+echo >> /config/scrapli_cfg_candidate '        }'
+
+
+echo >> /config/scrapli_cfg_candidate '    }'
+
+
+echo >> /config/scrapli_cfg_candidate '    syslog {'
+
+
+echo >> /config/scrapli_cfg_candidate '        user * {'
+
+
+echo >> /config/scrapli_cfg_candidate '            any emergency;'
+
+
+echo >> /config/scrapli_cfg_candidate '        }'
+
+
+echo >> /config/scrapli_cfg_candidate '        file messages {'
+
+
+echo >> /config/scrapli_cfg_candidate '            any any;'
+
+
+echo >> /config/scrapli_cfg_candidate '            authorization info;'
+
+
+echo >> /config/scrapli_cfg_candidate '        }'
+
+
+echo >> /config/scrapli_cfg_candidate '        file interactive-commands {'
+
+
+echo >> /config/scrapli_cfg_candidate '            interactive-commands any;'
+
+
+echo >> /config/scrapli_cfg_candidate '        }'
+
+
+echo >> /config/scrapli_cfg_candidate '    }'
+
+
+echo >> /config/scrapli_cfg_candidate '    license {'
+
+
+echo >> /config/scrapli_cfg_candidate '        autoupdate {'
+
+
+echo >> /config/scrapli_cfg_candidate '            url https://ae1.juniper.net/junos/key_retrieval;'
+
+
+echo >> /config/scrapli_cfg_candidate '        }'
+
+
+echo >> /config/scrapli_cfg_candidate '    }'
+
+
+echo >> /config/scrapli_cfg_candidate '}'
+
+
+echo >> /config/scrapli_cfg_candidate 'security {'
+
+
+echo >> /config/scrapli_cfg_candidate '    screen {'
+
+
+echo >> /config/scrapli_cfg_candidate '        ids-option untrust-screen {'
+
+
+echo >> /config/scrapli_cfg_candidate '            icmp {'
+
+
+echo >> /config/scrapli_cfg_candidate '                ping-death;'
+
+
+echo >> /config/scrapli_cfg_candidate '            }'
+
+
+echo >> /config/scrapli_cfg_candidate '            ip {'
+
+
+echo >> /config/scrapli_cfg_candidate '                source-route-option;'
+
+
+echo >> /config/scrapli_cfg_candidate '                tear-drop;'
+
+
+echo >> /config/scrapli_cfg_candidate '            }'
+
+
+echo >> /config/scrapli_cfg_candidate '            tcp {'
+
+
+echo >> /config/scrapli_cfg_candidate '                syn-flood {'
+
+
+echo >> /config/scrapli_cfg_candidate '                    alarm-threshold 1024;'
+
+
+echo >> /config/scrapli_cfg_candidate '                    attack-threshold 200;'
+
+
+echo >> /config/scrapli_cfg_candidate '                    source-threshold 1024;'
+
+
+echo >> /config/scrapli_cfg_candidate '                    destination-threshold 2048;'
+
+
+echo >> /config/scrapli_cfg_candidate '                    queue-size 2000; ## Warning: 'queue-size' is deprecated'
+
+
+echo >> /config/scrapli_cfg_candidate '                    timeout 20;'
+
+
+echo >> /config/scrapli_cfg_candidate '                }'
+
+
+echo >> /config/scrapli_cfg_candidate '                land;'
+
+
+echo >> /config/scrapli_cfg_candidate '            }'
+
+
+echo >> /config/scrapli_cfg_candidate '        }'
+
+
+echo >> /config/scrapli_cfg_candidate '    }'
+
+
+echo >> /config/scrapli_cfg_candidate '    policies {'
+
+
+echo >> /config/scrapli_cfg_candidate '        from-zone trust to-zone trust {'
+
+
+echo >> /config/scrapli_cfg_candidate '            policy default-permit {'
+
+
+echo >> /config/scrapli_cfg_candidate '                match {'
+
+
+echo >> /config/scrapli_cfg_candidate '                    source-address any;'
+
+
+echo >> /config/scrapli_cfg_candidate '                    destination-address any;'
+
+
+echo >> /config/scrapli_cfg_candidate '                    application any;'
+
+
+echo >> /config/scrapli_cfg_candidate '                }'
+
+
+echo >> /config/scrapli_cfg_candidate '                then {'
+
+
+echo >> /config/scrapli_cfg_candidate '                    permit;'
+
+
+echo >> /config/scrapli_cfg_candidate '                }'
+
+
+echo >> /config/scrapli_cfg_candidate '            }'
+
+
+echo >> /config/scrapli_cfg_candidate '        }'
+
+
+echo >> /config/scrapli_cfg_candidate '        from-zone trust to-zone untrust {'
+
+
+echo >> /config/scrapli_cfg_candidate '            policy default-permit {'
+
+
+echo >> /config/scrapli_cfg_candidate '                match {'
+
+
+echo >> /config/scrapli_cfg_candidate '                    source-address any;'
+
+
+echo >> /config/scrapli_cfg_candidate '                    destination-address any;'
+
+
+echo >> /config/scrapli_cfg_candidate '                    application any;'
+
+
+echo >> /config/scrapli_cfg_candidate '                }'
+
+
+echo >> /config/scrapli_cfg_candidate '                then {'
+
+
+echo >> /config/scrapli_cfg_candidate '                    permit;'
+
+
+echo >> /config/scrapli_cfg_candidate '                }'
+
+
+echo >> /config/scrapli_cfg_candidate '            }'
+
+
+echo >> /config/scrapli_cfg_candidate '        }'
+
+
+echo >> /config/scrapli_cfg_candidate '    }'
+
+
+echo >> /config/scrapli_cfg_candidate '    zones {'
+
+
+echo >> /config/scrapli_cfg_candidate '        security-zone trust {'
+
+
+echo >> /config/scrapli_cfg_candidate '            tcp-rst;'
+
+
+echo >> /config/scrapli_cfg_candidate '        }'
+
+
+echo >> /config/scrapli_cfg_candidate '        security-zone untrust {'
+
+
+echo >> /config/scrapli_cfg_candidate '            screen untrust-screen;'
+
+
+echo >> /config/scrapli_cfg_candidate '        }'
+
+
+echo >> /config/scrapli_cfg_candidate '    }'
+
+
+echo >> /config/scrapli_cfg_candidate '}'
+
+
+echo >> /config/scrapli_cfg_candidate 'interfaces {'
+
+
+echo >> /config/scrapli_cfg_candidate '    fxp0 {'
+
+
+echo >> /config/scrapli_cfg_candidate '        unit 0 {'
+
+
+echo >> /config/scrapli_cfg_candidate '            family inet {'
+
+
+echo >> /config/scrapli_cfg_candidate '                address 10.0.0.15/24;'
+
+
+echo >> /config/scrapli_cfg_candidate '            }'
+
+
+echo >> /config/scrapli_cfg_candidate '        }'
+
+
+echo >> /config/scrapli_cfg_candidate '    }'
+
+
+echo >> /config/scrapli_cfg_candidate '}'
+
+
+
+
+exit
+
+
+
+
+configure
+
+
+
+
+load override /config/scrapli_cfg_candidate
+
+
+
+
+commit
+
+
+
+
+exit configuration-mode
+
+
+
+
+start shell user root
+
+
+
+
+rm /config/scrapli_cfg_candidate
+

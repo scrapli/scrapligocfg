@@ -1,0 +1,41 @@
+
+
+dir flash: | i bytes
+
+
+
+
+tclsh
+
+
+
+
+
+puts [open "flash:scrapli_cfg_candidate" w+] {
+
+interface GigabitEthernet1
+
+ description tacocat
+
+}
+
+
+tclquit
+
+
+copy flash:scrapli_cfg_candidate running-config
+
+
+
+
+copy running-config startup-config
+
+
+
+
+delete flash:scrapli_cfg_candidate
+
+
+
+
+

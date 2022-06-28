@@ -1,0 +1,50 @@
+
+
+start shell user root
+
+
+
+
+echo >> /config/scrapli_cfg_candidate 'system {'
+
+
+echo >> /config/scrapli_cfg_candidate '    host-name vr-vqfx;'
+
+
+echo >> /config/scrapli_cfg_candidate '}'
+
+
+
+
+exit
+
+
+
+
+configure
+
+
+
+
+load merge /config/scrapli_cfg_candidate
+
+
+
+
+commit
+
+
+
+
+exit configuration-mode
+
+
+
+
+start shell user root
+
+
+
+
+rm /config/scrapli_cfg_candidate
+

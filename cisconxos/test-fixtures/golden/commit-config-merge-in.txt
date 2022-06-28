@@ -1,0 +1,50 @@
+
+
+dir bootflash: | i bytes
+
+
+
+
+tclsh
+
+
+
+
+
+
+set fl [open "/bootflash/scrapli_cfg_candidate" wb+]
+
+
+puts -nonewline $fl {interface Ethernet1/128
+
+
+}
+
+
+puts -nonewline $fl {  description tacocat
+
+
+}
+
+
+close $fl
+
+
+
+
+tclquit
+
+
+
+
+copy bootflash:scrapli_cfg_candidate running-config
+
+
+copy running-config startup-config
+
+
+terminal dont-ask
+
+
+delete bootflash:scrapli_cfg_candidate
+

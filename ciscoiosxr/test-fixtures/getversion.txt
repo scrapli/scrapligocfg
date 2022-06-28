@@ -1,0 +1,5 @@
+RP/0/RP0/CPU0:vr-xrv9k#show version | i Version
+Mon Jun 27 19:33:07.652 UTC
+Cisco IOS XR Software, Version 6.5.3
+ Version      : 6.5.3
+RP/0/RP0/CPU0:vr-xrv9k#

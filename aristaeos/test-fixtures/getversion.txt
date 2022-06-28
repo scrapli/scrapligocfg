@@ -1,0 +1,3 @@
+ceos#show version | i Software image version
+Software image version: 4.28.0F-26924507.4280F (engineering build)
+ceos#

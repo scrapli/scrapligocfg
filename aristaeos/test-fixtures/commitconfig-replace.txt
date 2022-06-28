@@ -1,0 +1,51 @@
+ceos#
+ceos#configure session scrapli_cfg_candidate
+ceos(config-s-scrapl)#
+ceos(config-s-scrapl)#rollback clean-config
+ceos(config-s-scrapl)#
+ceos(config-s-scrapl)#!
+ceos(config-s-scrapl)#!
+ceos(config-s-scrapl)#!
+ceos(config-s-scrapl)#no aaa root
+ceos(config-s-scrapl)#!
+ceos(config-s-scrapl)#username admin privilege 15 role network-admin secret sha512 $6$hB2JUt/ViRqix1FE$LeMDLUUvYUB9RcfqIWNYTZcvQX8lBHHeC5FjEkk/Uj3HJKw4fOTXMHNBU6/x3yS2hUrrM7m/xVTYzrQV5YLkD/
+ceos(config-s-scrapl)#!
+ceos(config-s-scrapl)#transceiver qsfp default-mode 4x10G
+ceos(config-s-scrapl)#!
+ceos(config-s-scrapl)#service routing protocols model multi-agent
+ceos(config-s-scrapl)#!
+ceos(config-s-scrapl)#hostname ceos
+ceos(config-s-scrapl)#!
+ceos(config-s-scrapl)#spanning-tree mode mstp
+ceos(config-s-scrapl)#!
+ceos(config-s-scrapl)#management api http-commands
+ceos(config-s-scrapl-mgmt-api-http-cmds)#   no shutdown
+ceos(config-s-scrapl-mgmt-api-http-cmds)#!
+ceos(config-s-scrapl-mgmt-api-http-cmds)#management api gnmi
+ceos(config-s-scrapl-mgmt-api-gnmi)#   transport grpc default
+ceos(config-s-scrapl-gnmi-transport-default)#!
+ceos(config-s-scrapl-gnmi-transport-default)#management api netconf
+ceos(config-s-scrapl-mgmt-api-netconf)#   transport ssh default
+ceos(config-s-scrapl-netconf-transport-default)#!
+ceos(config-s-scrapl-netconf-transport-default)#interface Ethernet1
+ceos(config-s-scrapl-if-Et1)#!
+ceos(config-s-scrapl-if-Et1)#interface Ethernet2
+ceos(config-s-scrapl-if-Et2)#!
+ceos(config-s-scrapl-if-Et2)#interface Management0
+ceos(config-s-scrapl-if-Ma0)#   ip address 172.20.20.14/24
+ceos(config-s-scrapl-if-Ma0)#   ipv6 address 2001:172:20:20::14/64
+ceos(config-s-scrapl-if-Ma0)#!
+ceos(config-s-scrapl-if-Ma0)#ip routing
+ceos(config-s-scrapl)#!
+ceos(config-s-scrapl)#ip route 0.0.0.0/0 172.20.20.1
+ceos(config-s-scrapl)#!
+ceos(config-s-scrapl)#!
+ceos(config-s-scrapl)#
+ceos(config-s-scrapl)#
+ceos(config-s-scrapl)#
+ceos(config-s-scrapl)#end
+ceos#
+ceos#configure session scrapli_cfg_candidate commit
+ceos#copy running-config startup-config
+Copy completed successfully.
+ceos#

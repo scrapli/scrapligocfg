@@ -1,0 +1,46 @@
+admin@vr-vqfx> start shell user root
+Password:
+root@vr-vqfx%
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate 'system {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '    host-name vr-vqfx;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '}'
+root@vr-vqfx%
+root@vr-vqfx% exit
+exit
+
+admin@vr-vqfx>
+
+admin@vr-vqfx> configure
+Entering configuration mode
+Users currently editing the configuration:
+  boxen terminal d0 (pid 2093) on since 2022-06-27 15:36:03 UTC, idle 04:57:49
+      [edit]
+
+[edit]
+admin@vr-vqfx#
+
+[edit]
+admin@vr-vqfx# load merge /config/scrapli_cfg_candidate
+load complete
+
+[edit]
+admin@vr-vqfx#
+
+[edit]
+admin@vr-vqfx# commit
+commit complete
+
+[edit]
+admin@vr-vqfx#
+
+[edit]
+admin@vr-vqfx# exit configuration-mode
+Exiting configuration mode
+
+admin@vr-vqfx>
+
+admin@vr-vqfx> start shell user root
+Password:
+root@vr-vqfx%
+root@vr-vqfx% rm /config/scrapli_cfg_candidate
+root@vr-vqfx%

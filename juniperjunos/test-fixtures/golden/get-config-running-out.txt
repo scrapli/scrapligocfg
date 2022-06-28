@@ -1,0 +1,5 @@
+## Last commit: 2022-06-27 15:36:44 UTC by boxen
+version 17.3R2.10;
+system {
+    host-name vr-vqfx;
+    root-authentication {

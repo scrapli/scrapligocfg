@@ -1,0 +1,33 @@
+
+
+configure session scrapli_cfg_candidate
+
+
+
+
+interface Ethernet1
+
+
+ description tacocat
+
+
+
+
+
+
+
+
+
+
+
+
+end
+
+
+
+
+configure session scrapli_cfg_candidate commit
+
+
+copy running-config startup-config
+

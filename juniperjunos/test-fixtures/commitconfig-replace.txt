@@ -1,0 +1,161 @@
+admin@vr-vqfx> start shell user root
+Password:
+root@vr-vqfx%
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate 'system {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '    host-name vr-vqfx;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '    root-authentication {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '        encrypted-password "$1$a$/nr2uXmtaTqW504hxM3Yw0"; ## SECRET-DATA'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '    }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '    login {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '        user admin {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '            uid 2001;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '            class super-user;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '            authentication {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                encrypted-password "$6$7Z54CIYT$MHaROLZKJluM8DbQmXAe/69e4nHZtNEqY49g00c5UJHX/qZJbJJp/RfC5H1xfmcmZawlpL1/EE3uzds8KwEub0"; ## SECRET-DATA'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '            }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '        }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '        user boxen {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '            uid 2000;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '            class super-user;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '            authentication {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                encrypted-password "$1$a$/nr2uXmtaTqW504hxM3Yw0"; ## SECRET-DATA'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '            }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '        }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '    }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '    services {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '        ssh;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '        netconf {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '            ssh;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '            rfc-compliant;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '        }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '        web-management {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '            http {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                interface fxp0.0;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '            }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '        }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '    }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '    syslog {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '        user * {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '            any emergency;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '        }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '        file messages {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '            any any;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '            authorization info;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '        }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '        file interactive-commands {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '            interactive-commands any;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '        }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '    }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '    license {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '        autoupdate {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '            url https://ae1.juniper.net/junos/key_retrieval;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '        }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '    }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '}'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate 'security {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '    screen {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '        ids-option untrust-screen {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '            icmp {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                ping-death;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '            }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '            ip {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                source-route-option;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                tear-drop;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '            }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '            tcp {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                syn-flood {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                    alarm-threshold 1024;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                    attack-threshold 200;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                    source-threshold 1024;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                    destination-threshold 2048;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                    queue-size 2000; ## Warning: 'queue-size' is deprecated'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                    timeout 20;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                land;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '            }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '        }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '    }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '    policies {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '        from-zone trust to-zone trust {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '            policy default-permit {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                match {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                    source-address any;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                    destination-address any;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                    application any;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                then {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                    permit;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '            }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '        }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '        from-zone trust to-zone untrust {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '            policy default-permit {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                match {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                    source-address any;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                    destination-address any;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                    application any;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                then {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                    permit;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '            }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '        }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '    }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '    zones {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '        security-zone trust {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '            tcp-rst;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '        }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '        security-zone untrust {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '            screen untrust-screen;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '        }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '    }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '}'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate 'interfaces {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '    fxp0 {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '        unit 0 {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '            family inet {'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '                address 10.0.0.15/24;'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '            }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '        }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '    }'
+root@vr-vqfx% echo >> /config/scrapli_cfg_candidate '}'
+root@vr-vqfx%
+root@vr-vqfx% exit
+exit
+
+admin@vr-vqfx>
+
+admin@vr-vqfx> configure
+Entering configuration mode
+Users currently editing the configuration:
+  boxen terminal d0 (pid 2093) on since 2022-06-27 15:36:03 UTC, idle 04:48:50
+      [edit]
+
+[edit]
+admin@vr-vqfx#
+
+[edit]
+admin@vr-vqfx# load override /config/scrapli_cfg_candidate
+load complete
+
+[edit]
+admin@vr-vqfx#
+
+[edit]
+admin@vr-vqfx# commit
+commit complete
+
+[edit]
+admin@vr-vqfx#
+
+[edit]
+admin@vr-vqfx# exit configuration-mode
+Exiting configuration mode
+
+admin@vr-vqfx>
+
+admin@vr-vqfx> start shell user root
+Password:
+root@vr-vqfx%
+root@vr-vqfx% rm /config/scrapli_cfg_candidate
+root@vr-vqfx%

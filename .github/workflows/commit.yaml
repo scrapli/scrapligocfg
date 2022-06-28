@@ -1,0 +1,29 @@
+name: Commit
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  unit-test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      max-parallel: 6
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        go-version: ["1.16", "1.17", "1.18"]
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: set up go ${{ matrix.go-version }}
+        uses: actions/setup-go@v3
+        with:
+          go-version: ${{ matrix.go-version }}
+      - name: lint
+        uses: golangci/golangci-lint-action@v3
+        with:
+          version: v1.46
+      - name: install gotestsum
+        run: go install gotest.tools/gotestsum@latest
+      - name: tests
+        run: make test

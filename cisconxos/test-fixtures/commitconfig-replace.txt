@@ -1,0 +1,2056 @@
+vr-n9kv# dir bootflash: | i bytes
+ 1519157248 bytes used
+ 1950953472 bytes free
+ 3470110720 bytes total
+vr-n9kv#
+vr-n9kv# tclsh
+vr-n9kv-tcl#
+vr-n9kv-tcl#
+vr-n9kv-tcl# set fl [open "/bootflash/scrapli_cfg_candidate" wb+]
+file32
+vr-n9kv-tcl# puts -nonewline $fl {!Command: Checkpoint cmd vdc 1
+> }
+vr-n9kv-tcl# puts -nonewline $fl {!Time: Thu Dec 31 19:38:21 2020
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {version 9.2(4) Bios:version
+> }
+vr-n9kv-tcl# puts -nonewline $fl {class-map type network-qos c-nq1
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  description Default class on qos-group 1
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  match qos-group 1
+> }
+vr-n9kv-tcl# puts -nonewline $fl {class-map type network-qos c-nq2
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  description Default class on qos-group 2
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  match qos-group 2
+> }
+vr-n9kv-tcl# puts -nonewline $fl {class-map type network-qos c-nq3
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  description Default class on qos-group 3
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  match qos-group 3
+> }
+vr-n9kv-tcl# puts -nonewline $fl {class-map type network-qos c-8q-nq1
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  description Default class on qos-group 1
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  match qos-group 1
+> }
+vr-n9kv-tcl# puts -nonewline $fl {class-map type network-qos c-8q-nq2
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  description Default class on qos-group 2
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  match qos-group 2
+> }
+vr-n9kv-tcl# puts -nonewline $fl {class-map type network-qos c-8q-nq3
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  description Default class on qos-group 3
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  match qos-group 3
+> }
+vr-n9kv-tcl# puts -nonewline $fl {class-map type network-qos c-8q-nq4
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  description Default class on qos-group 4
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  match qos-group 4
+> }
+vr-n9kv-tcl# puts -nonewline $fl {class-map type network-qos c-8q-nq5
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  description Default class on qos-group 5
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  match qos-group 5
+> }
+vr-n9kv-tcl# puts -nonewline $fl {class-map type network-qos c-8q-nq6
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  description Default class on qos-group 6
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  match qos-group 6
+> }
+vr-n9kv-tcl# puts -nonewline $fl {class-map type network-qos c-8q-nq7
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  description Default class on qos-group 7
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  match qos-group 7
+> }
+vr-n9kv-tcl# puts -nonewline $fl {class-map type network-qos c-nq-default
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  description Default class on qos-group 0
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  match qos-group 0
+> }
+vr-n9kv-tcl# puts -nonewline $fl {class-map type network-qos c-8q-nq-default
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  description Default class on qos-group 0
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  match qos-group 0
+> }
+vr-n9kv-tcl# puts -nonewline $fl {policy-map type network-qos default-nq-policy
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  class type network-qos c-nq3
+> }
+vr-n9kv-tcl# puts -nonewline $fl {    mtu 1500
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  class type network-qos c-nq2
+> }
+vr-n9kv-tcl# puts -nonewline $fl {    mtu 1500
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  class type network-qos c-nq1
+> }
+vr-n9kv-tcl# puts -nonewline $fl {    mtu 1500
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  class type network-qos c-nq-default
+> }
+vr-n9kv-tcl# puts -nonewline $fl {    mtu 1500
+> }
+vr-n9kv-tcl# puts -nonewline $fl {policy-map type network-qos default-8q-nq-policy
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  class type network-qos c-8q-nq7
+> }
+vr-n9kv-tcl# puts -nonewline $fl {    mtu 1500
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  class type network-qos c-8q-nq6
+> }
+vr-n9kv-tcl# puts -nonewline $fl {    mtu 1500
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  class type network-qos c-8q-nq5
+> }
+vr-n9kv-tcl# puts -nonewline $fl {    mtu 1500
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  class type network-qos c-8q-nq4
+> }
+vr-n9kv-tcl# puts -nonewline $fl {    mtu 1500
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  class type network-qos c-8q-nq3
+> }
+vr-n9kv-tcl# puts -nonewline $fl {    mtu 1500
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  class type network-qos c-8q-nq2
+> }
+vr-n9kv-tcl# puts -nonewline $fl {    mtu 1500
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  class type network-qos c-8q-nq1
+> }
+vr-n9kv-tcl# puts -nonewline $fl {    mtu 1500
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  class type network-qos c-8q-nq-default
+> }
+vr-n9kv-tcl# puts -nonewline $fl {    mtu 1500
+> }
+vr-n9kv-tcl# puts -nonewline $fl {vdc switch id 1
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  limit-resource vlan minimum 16 maximum 4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  limit-resource vrf minimum 2 maximum 4096
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  limit-resource port-channel minimum 0 maximum 511
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  limit-resource u4route-mem minimum 128 maximum 128
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  limit-resource u6route-mem minimum 96 maximum 96
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  limit-resource m4route-mem minimum 58 maximum 58
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  limit-resource m6route-mem minimum 8 maximum 8
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {!#feature ssh
+> }
+vr-n9kv-tcl# puts -nonewline $fl {!#ssh key rsa 1024
+> }
+vr-n9kv-tcl# puts -nonewline $fl {feature telnet
+> }
+vr-n9kv-tcl# puts -nonewline $fl {feature nxapi
+> }
+vr-n9kv-tcl# puts -nonewline $fl {feature scp-server
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {role name priv-15
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  description This is a system defined privilege role.
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  rule 1 permit read-write
+> }
+vr-n9kv-tcl# puts -nonewline $fl {role name priv-14
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  description This is a system defined privilege role.
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  rule 1 permit read-write
+> }
+vr-n9kv-tcl# puts -nonewline $fl {role name priv-13
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  description This is a system defined privilege role.
+> }
+vr-n9kv-tcl# puts -nonewline $fl {role name priv-12
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  description This is a system defined privilege role.
+> }
+vr-n9kv-tcl# puts -nonewline $fl {role name priv-11
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  description This is a system defined privilege role.
+> }
+vr-n9kv-tcl# puts -nonewline $fl {role name priv-10
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  description This is a system defined privilege role.
+> }
+vr-n9kv-tcl# puts -nonewline $fl {role name priv-9
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  description This is a system defined privilege role.
+> }
+vr-n9kv-tcl# puts -nonewline $fl {role name priv-8
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  description This is a system defined privilege role.
+> }
+vr-n9kv-tcl# puts -nonewline $fl {role name priv-7
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  description This is a system defined privilege role.
+> }
+vr-n9kv-tcl# puts -nonewline $fl {role name priv-6
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  description This is a system defined privilege role.
+> }
+vr-n9kv-tcl# puts -nonewline $fl {role name priv-5
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  description This is a system defined privilege role.
+> }
+vr-n9kv-tcl# puts -nonewline $fl {role name priv-4
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  description This is a system defined privilege role.
+> }
+vr-n9kv-tcl# puts -nonewline $fl {role name priv-3
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  description This is a system defined privilege role.
+> }
+vr-n9kv-tcl# puts -nonewline $fl {role name priv-2
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  description This is a system defined privilege role.
+> }
+vr-n9kv-tcl# puts -nonewline $fl {role name priv-1
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  description This is a system defined privilege role.
+> }
+vr-n9kv-tcl# puts -nonewline $fl {role name priv-0
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  description This is a system defined privilege role.
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  rule 10 permit command traceroute6 *
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  rule 9 permit command traceroute *
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  rule 8 permit command telnet6 *
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  rule 7 permit command telnet *
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  rule 6 permit command ping6 *
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  rule 5 permit command ping *
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  rule 4 permit command ssh6 *
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  rule 3 permit command ssh *
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  rule 2 permit command enable *
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  rule 1 permit read
+> }
+vr-n9kv-tcl# puts -nonewline $fl {no password strength-check
+> }
+vr-n9kv-tcl# puts -nonewline $fl {username admin password 5 $5$LOIMHI$hIaO64VM40/x.MTQoeWg8/IAn2iBY5jv4WZyzQbb5q9  role network-admin
+> }
+vr-n9kv-tcl# puts -nonewline $fl {username vrnetlab password 5 $5$AT5s3bhE$4/A..pCU3QK/YfesFHYPgbStJuRKK2JoYO7dEOGN2n3  role network-admin
+> }
+vr-n9kv-tcl# puts -nonewline $fl {username vrnetlab passphrase  lifetime 99999 warntime 14 gracetime 3
+> }
+vr-n9kv-tcl# puts -nonewline $fl {ip domain-lookup
+> }
+vr-n9kv-tcl# puts -nonewline $fl {!# qos statistics
+> }
+vr-n9kv-tcl# puts -nonewline $fl {!# class-map type queuing match-any c-out-q3
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !# match qos-group 3
+> }
+vr-n9kv-tcl# puts -nonewline $fl {!# class-map type queuing match-any c-out-q2
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !# match qos-group 2
+> }
+vr-n9kv-tcl# puts -nonewline $fl {!# class-map type queuing match-any c-out-q1
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !# match qos-group 1
+> }
+vr-n9kv-tcl# puts -nonewline $fl {!# class-map type queuing match-any c-out-q-default
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !# match qos-group 0
+> }
+vr-n9kv-tcl# puts -nonewline $fl {!# class-map type queuing match-any c-out-8q-q7
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !# match qos-group 7
+> }
+vr-n9kv-tcl# puts -nonewline $fl {!# class-map type queuing match-any c-out-8q-q6
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !# match qos-group 6
+> }
+vr-n9kv-tcl# puts -nonewline $fl {!# class-map type queuing match-any c-out-8q-q5
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !# match qos-group 5
+> }
+vr-n9kv-tcl# puts -nonewline $fl {!# class-map type queuing match-any c-out-8q-q4
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !# match qos-group 4
+> }
+vr-n9kv-tcl# puts -nonewline $fl {!# class-map type queuing match-any c-out-8q-q3
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !# match qos-group 3
+> }
+vr-n9kv-tcl# puts -nonewline $fl {!# class-map type queuing match-any c-out-8q-q2
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !# match qos-group 2
+> }
+vr-n9kv-tcl# puts -nonewline $fl {!# class-map type queuing match-any c-out-8q-q1
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !# match qos-group 1
+> }
+vr-n9kv-tcl# puts -nonewline $fl {!# class-map type queuing match-any c-out-8q-q-default
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !# match qos-group 0
+> }
+vr-n9kv-tcl# puts -nonewline $fl {!# class-map type queuing match-any c-in-q7
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !# match qos-group 7
+> }
+vr-n9kv-tcl# puts -nonewline $fl {!# class-map type queuing match-any c-in-q6
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !# match qos-group 6
+> }
+vr-n9kv-tcl# puts -nonewline $fl {!# class-map type queuing match-any c-in-q5
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !# match qos-group 5
+> }
+vr-n9kv-tcl# puts -nonewline $fl {!# class-map type queuing match-any c-in-q4
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !# match qos-group 4
+> }
+vr-n9kv-tcl# puts -nonewline $fl {!# class-map type queuing match-any c-in-q3
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !# match qos-group 3
+> }
+vr-n9kv-tcl# puts -nonewline $fl {!# class-map type queuing match-any c-in-q2
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !# match qos-group 2
+> }
+vr-n9kv-tcl# puts -nonewline $fl {!# class-map type queuing match-any c-in-q1
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !# match qos-group 1
+> }
+vr-n9kv-tcl# puts -nonewline $fl {!# class-map type queuing match-any c-in-q-default
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !# match qos-group 0
+> }
+vr-n9kv-tcl# puts -nonewline $fl {policy-map type queuing default-out-policy
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  class type queuing c-out-q3
+> }
+vr-n9kv-tcl# puts -nonewline $fl {    priority level 1
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  class type queuing c-out-q2
+> }
+vr-n9kv-tcl# puts -nonewline $fl {    bandwidth remaining percent 0
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  class type queuing c-out-q1
+> }
+vr-n9kv-tcl# puts -nonewline $fl {    bandwidth remaining percent 0
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  class type queuing c-out-q-default
+> }
+vr-n9kv-tcl# puts -nonewline $fl {    bandwidth remaining percent 100
+> }
+vr-n9kv-tcl# puts -nonewline $fl {policy-map type queuing default-8q-out-policy
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  class type queuing c-out-8q-q7
+> }
+vr-n9kv-tcl# puts -nonewline $fl {    priority level 1
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  class type queuing c-out-8q-q6
+> }
+vr-n9kv-tcl# puts -nonewline $fl {    bandwidth remaining percent 0
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  class type queuing c-out-8q-q5
+> }
+vr-n9kv-tcl# puts -nonewline $fl {    bandwidth remaining percent 0
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  class type queuing c-out-8q-q4
+> }
+vr-n9kv-tcl# puts -nonewline $fl {    bandwidth remaining percent 0
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  class type queuing c-out-8q-q3
+> }
+vr-n9kv-tcl# puts -nonewline $fl {    bandwidth remaining percent 0
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  class type queuing c-out-8q-q2
+> }
+vr-n9kv-tcl# puts -nonewline $fl {    bandwidth remaining percent 0
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  class type queuing c-out-8q-q1
+> }
+vr-n9kv-tcl# puts -nonewline $fl {    bandwidth remaining percent 0
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  class type queuing c-out-8q-q-default
+> }
+vr-n9kv-tcl# puts -nonewline $fl {    bandwidth remaining percent 100
+> }
+vr-n9kv-tcl# puts -nonewline $fl {copp profile strict
+> }
+vr-n9kv-tcl# puts -nonewline $fl {no system mode maintenance
+> }
+vr-n9kv-tcl# puts -nonewline $fl {snmp-server user admin network-admin auth md5 0xd42fc9f6e153a348e1ab40f0f5b84589 priv 0xd42fc9f6e153a348e1ab40f0f5b84589 localizedkey
+> }
+vr-n9kv-tcl# puts -nonewline $fl {snmp-server user vrnetlab network-admin auth md5 0x1a3abb28531cf988a22cc61af30861a7 priv 0x1a3abb28531cf988a22cc61af30861a7 localizedkey
+> }
+vr-n9kv-tcl# puts -nonewline $fl {rmon event 1 description FATAL(1) owner PMON@FATAL
+> }
+vr-n9kv-tcl# puts -nonewline $fl {rmon event 2 description CRITICAL(2) owner PMON@CRITICAL
+> }
+vr-n9kv-tcl# puts -nonewline $fl {rmon event 3 description ERROR(3) owner PMON@ERROR
+> }
+vr-n9kv-tcl# puts -nonewline $fl {rmon event 4 description WARNING(4) owner PMON@WARNING
+> }
+vr-n9kv-tcl# puts -nonewline $fl {rmon event 5 description INFORMATION(5) owner PMON@INFO
+> }
+vr-n9kv-tcl# puts -nonewline $fl {callhome
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#destination-profile CiscoTAC-1 message-level 0
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#destination-profile CiscoTAC-1 message-size 5000000
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#destination-profile full_txt message-level 0
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#destination-profile full_txt message-size 2500000
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#destination-profile short_txt message-level 0
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#destination-profile short_txt message-size 4000
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#periodic-inventory notification interval 7
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#periodic-inventory notification timeofday 08:00
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {vlan 1
+> }
+vr-n9kv-tcl# puts -nonewline $fl {vrf context management
+> }
+vr-n9kv-tcl# puts -nonewline $fl {no nxapi http
+> }
+vr-n9kv-tcl# puts -nonewline $fl {nxapi https port 443
+> }
+vr-n9kv-tcl# puts -nonewline $fl {no nxapi ssl ciphers weak
+> }
+vr-n9kv-tcl# puts -nonewline $fl {nxapi ssl protocols TLSv1.1 TLSv1.2
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/1
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/2
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/3
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/4
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/5
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/6
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/7
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/8
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/9
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/10
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/11
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/12
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/13
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/14
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/15
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/16
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/17
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/18
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/19
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/20
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/21
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/22
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/23
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/24
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/25
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/26
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/27
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/28
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/29
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/30
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/31
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/32
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/33
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/34
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/35
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/36
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/37
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/38
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/39
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/40
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/41
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/42
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/43
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/44
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/45
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/46
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/47
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/48
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/49
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/50
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/51
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/52
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/53
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/54
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/55
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/56
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/57
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/58
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/59
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/60
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/61
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/62
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/63
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/64
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/65
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/66
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/67
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/68
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/69
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/70
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/71
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/72
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/73
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/74
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/75
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/76
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/77
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/78
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/79
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/80
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/81
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/82
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/83
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/84
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/85
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/86
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/87
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/88
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/89
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/90
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/91
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/92
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/93
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/94
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/95
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/96
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/97
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/98
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/99
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/100
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/101
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/102
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/103
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/104
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/105
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/106
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/107
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/108
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/109
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/110
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/111
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/112
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/113
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/114
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/115
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/116
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/117
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/118
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/119
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/120
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/121
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/122
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/123
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/124
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/125
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/126
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/127
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface Ethernet1/128
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  switchport mode access
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#switchport trunk allowed vlan 1-4094
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  !#no shutdown
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {interface mgmt0
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  vrf member management
+> }
+vr-n9kv-tcl# puts -nonewline $fl {  ip address 10.0.0.15/24
+> }
+vr-n9kv-tcl# puts -nonewline $fl {line console
+> }
+vr-n9kv-tcl# puts -nonewline $fl {line vty
+> }
+vr-n9kv-tcl# puts -nonewline $fl {boot nxos bootflash:/nxos.9.2.4.bin
+> }
+vr-n9kv-tcl# puts -nonewline $fl {xml server timeout 1200
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {no priority-flow-control override-interface mode off
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {!#logging logfile messages 5 size 4194304
+> }
+vr-n9kv-tcl# puts -nonewline $fl {!#logging monitor
+> }
+vr-n9kv-tcl# puts -nonewline $fl {!#logging module
+> }
+vr-n9kv-tcl# puts -nonewline $fl {!#logging console
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# puts -nonewline $fl {
+> }
+vr-n9kv-tcl# close $fl
+vr-n9kv-tcl#
+vr-n9kv-tcl# tclquit
+Exiting Tcl
+vr-n9kv#
+vr-n9kv# rollback running-config file bootflash:scrapli_cfg_candidate
+ADVISORY: Rollback operation started...
+Modifying running configuration from another VSH terminal in parallel
+is not recommended, as this may lead to Rollback failure.
+
+Collecting Running-Config
+Generating Rollback patch for switch profile
+Rollback Patch is Empty
+Collecting Running-Config
+Generating Rollback Patch
+Executing Rollback Patch
+During CR operation,will retain L3 configuration
+when vrf member change on interface
+Generating Running-config for verification
+Generating Rollback Patch
+
+Rollback completed successfully.
+
+switch# copy running-config startup-config
+Configuration update aborted: services in transient state, wait for the system to stabilize
+switch# terminal dont-ask
+switch# delete bootflash:scrapli_cfg_candidate
+switch#

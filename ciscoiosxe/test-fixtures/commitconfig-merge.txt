@@ -1,0 +1,26 @@
+vr-csr#
+vr-csr#dir flash: | i bytes
+6286540800 bytes total (5489737728 bytes free)
+vr-csr#
+vr-csr#tclsh
+vr-csr(tcl)#
+vr-csr(tcl)#
+vr-csr(tcl)#puts [open "flash:scrapli_cfg_candidate" w+] {
++>interface GigabitEthernet1
++> description tacocat
++>}
+vr-csr(tcl)#
+vr-csr(tcl)#tclquit
+vr-csr#
+vr-csr#copy flash:scrapli_cfg_candidate running-config
+Destination filename [running-config]?
+50 bytes copied in 0.009 secs (5556 bytes/sec)
+vr-csr#copy running-config startup-config
+Destination filename [startup-config]?
+Building configuration...
+[OK]
+vr-csr#delete flash:scrapli_cfg_candidate
+Delete filename [scrapli_cfg_candidate]?
+Delete bootflash:/scrapli_cfg_candidate? [confirm]
+
+vr-csr#

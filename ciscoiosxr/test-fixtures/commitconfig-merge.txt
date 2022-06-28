@@ -1,0 +1,13 @@
+RP/0/RP0/CPU0:vr-xrv9k#
+RP/0/RP0/CPU0:vr-xrv9k#configure terminal
+Mon Jun 27 19:40:48.351 UTC
+RP/0/RP0/CPU0:vr-xrv9k(config)#
+RP/0/RP0/CPU0:vr-xrv9k(config)#interface GigabitEthernet0/0/0/15
+RP/0/RP0/CPU0:vr-xrv9k(config-if)# description tacocat
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#commit
+Mon Jun 27 19:40:49.034 UTC
+RP/0/RP0/CPU0:vr-xrv9k(config-if)#

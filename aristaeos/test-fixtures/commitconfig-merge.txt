@@ -1,0 +1,14 @@
+ceos#
+ceos#configure session scrapli_cfg_candidate
+ceos(config-s-scrapl)#
+ceos(config-s-scrapl)#interface Ethernet1
+ceos(config-s-scrapl-if-Et1)# description tacocat
+ceos(config-s-scrapl-if-Et1)#
+ceos(config-s-scrapl-if-Et1)#
+ceos(config-s-scrapl-if-Et1)#
+ceos(config-s-scrapl-if-Et1)#end
+ceos#
+ceos#configure session scrapli_cfg_candidate commit
+ceos#copy running-config startup-config
+Copy completed successfully.
+ceos#

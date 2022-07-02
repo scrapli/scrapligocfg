@@ -22,6 +22,8 @@ github.com/scrapli/scrapligo v0.1.4-0.20220630194205-64cbf99b8c3b h1:xHlI8NLSJ6X
 github.com/scrapli/scrapligo v0.1.4-0.20220630194205-64cbf99b8c3b/go.mod h1:jvRMdb90MNnswMiku8UNXj8JZaOIPhwhcqqFwr9qeoY=
 github.com/scrapli/scrapligo v0.1.4-0.20220630214823-34a4338bd1b2 h1:Cqt0+F1Wr957vJtzk4E4oN8qBAFZ/9MZ5PdFHkNRH28=
 github.com/scrapli/scrapligo v0.1.4-0.20220630214823-34a4338bd1b2/go.mod h1:jvRMdb90MNnswMiku8UNXj8JZaOIPhwhcqqFwr9qeoY=
+github.com/scrapli/scrapligo v1.0.0 h1:UQru4yyoAvU0tdpfoZ8gAp/rdT5XQ6GRg41xkOdF2A4=
+github.com/scrapli/scrapligo v1.0.0/go.mod h1:jvRMdb90MNnswMiku8UNXj8JZaOIPhwhcqqFwr9qeoY=
 github.com/sirikothe/gotextfsm v1.0.1-0.20200816110946-6aa2cfd355e4 h1:FHUL2HofYJuslFOQdy/JjjP36zxqIpd/dcoiwLMIs7k=
 github.com/sirikothe/gotextfsm v1.0.1-0.20200816110946-6aa2cfd355e4/go.mod h1:CJYqpTg9u5VPCoD0VEl9E68prCIiWQD8m457k098DdQ=
 golang.org/x/crypto v0.0.0-20220518034528-6f7dac969898 h1:SLP7Q4Di66FONjDJbCYrCRrh97focO6sLogHO7/g8F0=

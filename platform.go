@@ -221,7 +221,7 @@ func (c *Cfg) LoadConfigFromFile(
 	replace bool,
 	opts ...util.Option,
 ) (*response.Response, error) {
-	b, err := os.ReadFile(f) // nolint: gosec
+	b, err := os.ReadFile(f) //nolint: gosec
 	if err != nil {
 		return nil, err
 	}

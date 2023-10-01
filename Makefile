@@ -11,3 +11,6 @@ lint: ## Run linters
 
 test: ## Run unit tests
 	gotestsum --format testname --hide-summary=skipped -- -coverprofile=cover.out ./...
+
+test-race: ## Run unit tests with race flag
+	gotestsum --format testname --hide-summary=skipped -- -coverprofile=cover.out ./... -race

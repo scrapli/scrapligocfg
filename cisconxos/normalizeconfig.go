@@ -7,7 +7,7 @@ import "strings"
 func (p *Platform) NormalizeConfig(config string) string {
 	config = p.patterns.outputHeader.ReplaceAllString(config, "")
 	config = p.patterns.checkpointLine.ReplaceAllString(config, "")
-	config = strings.Replace(config, "\n\n", "\n", -1)
+	config = strings.ReplaceAll(config, "\n\n", "\n")
 
 	return config
 }

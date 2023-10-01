@@ -9,6 +9,11 @@ import (
 	"golang.org/x/term"
 )
 
+const (
+	half            = 2
+	termWidthBuffer = 5
+)
+
 // NewDiffResponse returns a new DiffResponse object.
 func NewDiffResponse(host string, opts ...util.Option) *DiffResponse {
 	r := &Response{
@@ -94,8 +99,8 @@ func (r *DiffResponse) SideBySideDiff() string {
 
 	termWidth := r.terminalWidth()
 
-	halfTermWidth := termWidth / 2
-	diffSideWidth := halfTermWidth - 5
+	halfTermWidth := termWidth / half
+	diffSideWidth := halfTermWidth - termWidthBuffer
 
 	sideBySideDiffLines := make([]string, 0)
 
@@ -106,7 +111,7 @@ func (r *DiffResponse) SideBySideDiff() string {
 		difflineLen := len(line)
 
 		if difflineLen-1 <= trimLen {
-			trimLen = difflineLen - 2
+			trimLen = difflineLen - 2 //nolint:gomnd
 		}
 
 		switch line[:2] {

@@ -14,6 +14,8 @@ var (
 	patternsOnce sync.Once //nolint:gochecknoglobals
 )
 
+const spaceAvailBufferPerc = 10
+
 func getPatterns() *patterns {
 	patternsOnce.Do(func() {
 		patternsInst = &patterns{
@@ -44,7 +46,7 @@ func NewCiscoIOSXE(conn *network.Driver, opts ...util.Option) (*Platform, error)
 			"running": "show running-config",
 			"startup": "show startup-config",
 		},
-		spaceAvailBuffPerc: 10,
+		spaceAvailBuffPerc: spaceAvailBufferPerc,
 	}
 
 	for _, option := range opts {

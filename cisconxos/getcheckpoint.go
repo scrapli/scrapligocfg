@@ -8,7 +8,7 @@ import (
 )
 
 // GetCheckpoint gets a checkpoint file of the current running configuration.
-func (p *Platform) GetCheckpoint(source string) (*response.Response, error) {
+func (p *Platform) GetCheckpoint(_ string) (*response.Response, error) {
 	r := response.NewResponse("GetCheckpoint", p.conn.Transport.GetHost())
 
 	timestamp := time.Now().Unix()

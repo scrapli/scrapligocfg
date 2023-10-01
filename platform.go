@@ -93,7 +93,7 @@ func (c *Cfg) Prepare() error {
 	if c.OnPrepare != nil {
 		err = c.OnPrepare(c.Conn)
 		if err != nil {
-			return nil
+			return err
 		}
 	}
 
@@ -230,7 +230,7 @@ func (c *Cfg) LoadConfigFromFile(
 }
 
 // AbortConfig aborts a loaded candidate configuration.
-func (c *Cfg) AbortConfig() (*response.Response, error) { //nolint: dupl
+func (c *Cfg) AbortConfig() (*response.Response, error) {
 	c.Logger.Info("AbortConfig requested")
 
 	if !c.prepared {
@@ -262,7 +262,7 @@ func (c *Cfg) AbortConfig() (*response.Response, error) { //nolint: dupl
 }
 
 // CommitConfig commits a loaded candidate configuration.
-func (c *Cfg) CommitConfig() (*response.Response, error) { //nolint: dupl
+func (c *Cfg) CommitConfig() (*response.Response, error) {
 	c.Logger.Info("CommitConfig requested")
 
 	if !c.prepared {

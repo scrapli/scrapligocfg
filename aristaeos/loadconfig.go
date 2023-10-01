@@ -53,7 +53,7 @@ func (p *Platform) parseConfigPayload(config string) (stdConfig, eagerCfg string
 	eagerCfg = strings.Join(eagerS, "\n")
 
 	for _, s := range eagerS {
-		stdConfig = strings.Replace(stdConfig, s, "!", -1)
+		stdConfig = strings.ReplaceAll(stdConfig, s, "!")
 	}
 
 	return stdConfig, eagerCfg

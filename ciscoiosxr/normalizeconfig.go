@@ -6,7 +6,7 @@ import "strings"
 // kind of "header" pattern(s), but may vary from platform to platform.
 func (p *Platform) NormalizeConfig(config string) string {
 	config = p.patterns.outputHeader.ReplaceAllString(config, "")
-	config = strings.Replace(config, "\n\n", "\n", -1)
+	config = strings.ReplaceAll(config, "\n\n", "\n")
 
 	return config
 }
